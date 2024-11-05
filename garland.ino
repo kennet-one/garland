@@ -3,10 +3,8 @@
 //
 //************************************************************
 #include "painlessMesh.h"
+#include "mash_parameter.h"
 
-#define   MESH_PREFIX     "kennet"
-#define   MESH_PASSWORD   "kennet123"
-#define   MESH_PORT       5555
 
 Scheduler userScheduler; // to control your personal task
 painlessMesh  mesh;
