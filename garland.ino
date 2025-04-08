@@ -35,9 +35,11 @@ void receivedCallback( uint32_t from, String &msg ) {
     if (buttonState == 0) {
       mesh.sendSingle(2661345693,"garland_off");
       mesh.sendSingle(624409705,"garland_off");
+      mesh.sendSingle(1127818912,"garl0");
     } else {
       mesh.sendSingle(2661345693,"garland_on");
       mesh.sendSingle(624409705,"garland_on");
+      mesh.sendSingle(1127818912,"garl1");
     }
   }
 }
