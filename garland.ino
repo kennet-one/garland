@@ -22,26 +22,23 @@ void receivedCallback( uint32_t from, String &msg ) {
 
     if (buttonState == 1) {
       buttonState = 0;
-      mesh.sendSingle(2661345693,"garland_off");
-      mesh.sendSingle(624409705,"garland_off");
-      mesh.sendSingle(1127818912,"garl0");
+      mesh.sendBroadcast("garland_off");
+      mesh.sendBroadcast("garl0");
     } else {
       buttonState++;
-      mesh.sendSingle(2661345693,"garland_on");
-      mesh.sendSingle(624409705,"garland_on");
-      mesh.sendSingle(1127818912,"garl1");
+      mesh.sendBroadcast("garland_on");
+      mesh.sendBroadcast("garl1");
+
     } 
   }
 
   if (str1.equals(str3)) {
     if (buttonState == 0) {
-      mesh.sendSingle(2661345693,"garland_off");
-      mesh.sendSingle(624409705,"garland_off");
-      mesh.sendSingle(1127818912,"garl0");
+      mesh.sendBroadcast("garland_off");
+      mesh.sendBroadcast("garl0");
     } else {
-      mesh.sendSingle(2661345693,"garland_on");
-      mesh.sendSingle(624409705,"garland_on");
-      mesh.sendSingle(1127818912,"garl1");
+      mesh.sendBroadcast("garland_on");
+      mesh.sendBroadcast("garl1");
     }
   }
 }
