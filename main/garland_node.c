@@ -6,8 +6,8 @@
 
 static const char *TAG = "garland_node";
 
-// ТВОЄ реле на GPIO40
-#define GARLAND_RELAY_GPIO   GPIO_NUM_40
+// ТВОЄ реле на GPIO35
+#define GARLAND_RELAY_GPIO   GPIO_NUM_35
 
 // 1 = off, 0 = on (як у тебе)
 static uint8_t garland_state = 1;
@@ -39,6 +39,13 @@ static uint8_t garland_state = 1;
 // 		gpio_set_level(GARLAND_RELAY_GPIO, 1); // OFF
 // 		ESP_LOGI(TAG, "Relay OFF (GPIO%d=1)", GARLAND_RELAY_GPIO);
 // 	}
+// }
+// static uint8_t s_state = 0;
+
+// static void apply_relay(void)
+// {
+// 	gpio_set_level(GARLAND_RELAY_GPIO, s_state ? 1 : 0);
+// 	ESP_LOGI(TAG, "GPIO%d=%d (state=%u)", (int)GARLAND_RELAY_GPIO, s_state ? 1 : 0, (unsigned)s_state);
 // }
 
 static void apply_relay(void)
