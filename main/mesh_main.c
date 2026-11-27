@@ -149,6 +149,10 @@ static esp_err_t configure_mesh(void)
 	if ((err = esp_mesh_set_vote_percentage(1)) != ESP_OK) return err;
 	if ((err = esp_mesh_set_xon_qsize(128)) != ESP_OK) return err;
 	if ((err = esp_mesh_disable_ps()) != ESP_OK) return err;
+	/* default esp_mesh_send block time is FOREVER: one blocked send jams the
+	 * single-task TX broker and freezes HELLO retries (root-reboot recovery
+	 * livelock). 5 s timeout: fail fast, 5 s HELLO retry recovers. */
+	if ((err = esp_mesh_send_block_time(5000)) != ESP_OK) return err;
 	/* Encrypted mesh children may be quiet for more than the 10 s default. */
 	if ((err = esp_mesh_set_ap_assoc_expire(30)) != ESP_OK) return err;
 	if ((err = esp_mesh_set_ap_authmode(CONFIG_MESH_AP_AUTHMODE)) != ESP_OK) return err;
