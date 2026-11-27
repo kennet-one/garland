@@ -1,0 +1,7 @@
+#pragma once
+
+#include "keemash_mesh_ota_receiver.h"
+
+#define mesh_ota_receiver_start keemash_mesh_ota_receiver_start
+#define mesh_ota_receiver_active keemash_mesh_ota_receiver_active
+#define mesh_ota_receiver_handle_rx keemash_mesh_ota_receiver_handle_rx

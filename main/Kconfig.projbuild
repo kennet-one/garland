@@ -21,7 +21,7 @@ menu "Example Configuration"
 
     config MESH_ENABLE_PS
         bool "Enable mesh PS (power save) function"
-        default y
+        default n
         help
             Enable/Disable Power Save function.
 
@@ -169,4 +169,12 @@ menu "Example Configuration"
         default 50
         help
             The number of devices over the network(max: 300).
+
+    config GARLAND_MESH_RELAY_ELIGIBLE
+        bool "Advertise ESP-MESH relay eligibility"
+        default y
+        help
+            Advertises that this firmware permits ESP-MESH child routing.
+            It does not claim a separate application hop-by-hop transport.
+
 endmenu
